@@ -4,7 +4,7 @@ from subprocess import check_call
 
 
 def sh(command):
-    check_call(command, shell=True)
+    check_call(command.split())
 
 
 @when('apache.available')
