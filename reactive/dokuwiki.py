@@ -9,7 +9,6 @@ def sh(command):
 
 @when('apache.available')
 def start_wiki():
-    sh("chmod -R a+w /var/www/mywiki/conf")
-    sh("chmod -R a+w /var/www/mywiki/data")
+    sh("chown -R www-data:www-data /var/www/mywiki")
     set_state('apache.start')
     status_set('active', 'Ready')
