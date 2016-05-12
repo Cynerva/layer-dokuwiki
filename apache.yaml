@@ -1,0 +1,6 @@
+packages: []
+sites:
+  mywiki:
+    options: ''
+    install_from:
+      source: "https://dl.dropboxusercontent.com/u/32306657/dokuwiki-test.tar.gz"

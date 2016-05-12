@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+
+import amulet
+import requests
+
+
+def get_dokuwiki_deployment():
+    d = amulet.Deployment(series='trusty')
+    d.add('dokuwiki')
+    d.expose('dokuwiki')
+    d.setup()
+    d.sentry.wait()
+    return d
+
+
+def is_ipv6_address(address):
+    # not a great check - do better?
+    return ":" in address
+
+
+def get_url_from_address(address):
+    if is_ipv6_address(address):
+        return "http://[%s]" % address
+    else:
+        return "http://" + address
+
+
+def test_dokuwiki_is_reachable():
+    deployment = get_dokuwiki_deployment()
+    unit = deployment.sentry["dokuwiki"][0]
+    address = unit.info["public-address"]
+    url = get_url_from_address(address)
+    page = requests.get(url)
+    assert(page.status_code == 200)
+
+
+if __name__ == "__main__":
+    test_dokuwiki_is_reachable()
