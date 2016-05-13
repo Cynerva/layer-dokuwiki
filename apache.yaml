@@ -1,6 +1,6 @@
 packages: []
 sites:
-  mywiki:
+  dokuwiki-site:
     options: ''
     install_from:
-      source: "https://dl.dropboxusercontent.com/u/32306657/dokuwiki-test.tar.gz"
+      source: "http://download.dokuwiki.org/src/dokuwiki/dokuwiki-2015-08-10a.tgz"

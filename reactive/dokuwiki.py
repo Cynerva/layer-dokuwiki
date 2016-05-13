@@ -9,6 +9,6 @@ def sh(command):
 
 @when('apache.available')
 def start_wiki():
-    sh("chown -R www-data:www-data /var/www/mywiki")
+    sh("chown -R www-data:www-data /var/www/dokuwiki-site")
     set_state('apache.start')
     status_set('active', 'Ready')

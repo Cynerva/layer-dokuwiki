@@ -1,5 +1,5 @@
 name: dokuwiki
-summary: test deployment of dokuwiki
+summary: standards compliant simple to use wiki
 maintainer: George Kraft <george.kraft@canonical.com>
 description: |
   DokuWiki is a wiki mainly aimed at creating documentation of any kind.
