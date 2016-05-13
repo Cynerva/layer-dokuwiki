@@ -11,6 +11,7 @@ To build the charm:
 To deploy it:
 
 `juju deploy $JUJU_REPOSITORY/trusty/dokuwiki --series trusty`
+
 `juju expose dokuwiki`
 
 Once the dokuwiki service is in the `active` state, you should be able to access it by pointing a browser at the public address for dokuwiki/0. Hurray!
